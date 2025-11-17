@@ -1,16 +1,45 @@
-# React + Vite
+Um jogo da memória desenvolvido em React + Vite, usando TailwindCSS para estilização e imagens personalizadas de cartas.
+O objetivo é encontrar pares iguais dentro do menor número de jogadas.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Tecnologias usadas
 
-Currently, two official plugins are available:
+React
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Vite
 
-## React Compiler
+JavaScript (ES6+)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+TailwindCSS
 
-## Expanding the ESLint configuration
+CSS Grid
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Git & GitHub
+
+Funcionalidades
+
+Exibição das cartas em um grid responsivo
+
+Lógica de virar carta ao clicar
+
+Data-set de cartas gerado dinamicamente
+
+Embaralhamento aleatório
+
+Animações suaves com Tailwind
+
+(Próximos passos: verificar pares, bloquear cliques, contadores, vitória, reinício)
+
+# Como rodar o projeto
+
+git clone https://github.com/LucasRiosF/Jogo-da-Memoria
+
+cd Jogo-da-Memoria
+
+npm install
+
+npm run dev
+
+
+## 🎨 Ilustrações
+Todas as imagens das cartas foram desenhadas por mim (Lucas Rios Ferreira) especialmente para este projeto.  
+(Não foram utilizadas imagens de terceiros). 
