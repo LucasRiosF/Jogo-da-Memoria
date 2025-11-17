@@ -6,10 +6,11 @@ import Card from './Components/Card'
 import { cards } from './cardsData'
 
 function App() {
-  const [deck, setDeck] = useState([]);
-
+  const [cartas, setCartas] = useState([]);
+  const [primeiraCarta, setPrimeiraCarta] = useState(null);
+  const [segundaCarta, setSegundaCarta] = useState(null);
+  const [bloqueado, setBloqueado] = useState(false);
   const [virada, setVirada] = useState(false);
-
 
 function gerarDeck(cartas) {
   const deck = []
@@ -42,7 +43,7 @@ function gerarDeck(cartas) {
   useEffect(() => {
     const d = gerarDeck(cards);
     const embaralhado = embaralhar(d);
-    setDeck(embaralhado);
+    setCartas(embaralhado);
   }, []);
 
 function embaralhar(deck) {
@@ -58,13 +59,50 @@ function embaralhar(deck) {
   return embaralhado;
 }
 
-function virarCarta(id) {
-  setDeck(prev => 
-    prev.map(carta =>
-      carta.id === id
-      ? {...carta, virada: !carta.virada}
-      : carta
-    ));
+function virarCarta(carta) {
+  if (bloqueado) return;
+  if (carta.virada) return;
+
+   setCartas(prev =>
+    prev.map(c =>
+     c.id === carta.id ? { ...c, virada: true } : c
+    )
+  )
+
+if (!primeiraCarta) {
+  setPrimeiraCarta(carta);
+  return;
+}
+
+  //setSegundaCarta(carta);
+  setBloqueado(true);
+
+   if (primeiraCarta.parID === carta.parID) {
+    const novasCartas = cartas.map( c => {
+      if (c.id === primeiraCarta.id || c.id === carta.id){
+         return {... c, virada: true}
+      }
+      return c;
+    });
+    setCartas(novasCartas);
+    setPrimeiraCarta(null);
+    setBloqueado(false);
+  } else {
+    setTimeout(() => {
+
+     const desvira = cartas.map( c => {
+      if (c.id === primeiraCarta.id || c.id === carta.id){
+         return {... c, virada: false}
+      }
+      return c;
+    });
+    setCartas(desvira);
+    setPrimeiraCarta(null);
+    setSegundaCarta(null);
+    setBloqueado(false);
+
+    }, 2000);
+  }
 }
 
   return (
@@ -78,12 +116,12 @@ function virarCarta(id) {
         marginTop: "40px"
       }}
     >
-      {deck.map(carta => (
+      {cartas.map(carta => (
         <Card
           key={carta.id}
           image={carta.image}
           virada={carta.virada}
-          onClick={() => virarCarta(carta.id)}
+          onClick={() => virarCarta(carta)}
         />
       ))}
     </div>
