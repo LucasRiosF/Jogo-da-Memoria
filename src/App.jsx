@@ -107,15 +107,7 @@ if (!primeiraCarta) {
 
   return (
     <>
-     <div
-      style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(5, 140px)",
-        gap: "20px",
-        justifyContent: "center",
-        marginTop: "40px"
-      }}
-    >
+     <div className= "jogo">
       {cartas.map(carta => (
         <Card
           key={carta.id}
