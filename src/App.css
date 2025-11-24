@@ -59,6 +59,44 @@
   transform: rotateY(180deg);
 }
 
+@keyframes correto {
+  0% {
+    box-shadow: 0 0 5px 2px rgba(255, 215, 0, 0.4), 0 0 10px 4px rgba(0, 255, 0, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 15px 5px rgba(255, 215, 0, 0.8), 0 0 20px 8px rgba(0, 255, 0, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 5px 2px rgba(255, 215, 0, 0.4), 0 0 10px 4px rgba(0, 255, 0, 0.2);
+  }
+}
+
+.card.acerto {
+  border: 2px solid #FFD700; 
+  box-shadow: 0 0 5px 2px rgba(255, 215, 0, 0.4), 0 0 10px 4px rgba(0, 255, 0, 0.2);
+  animation: correto 0.6s ease forwards;
+}
+
+@keyframes errado{
+  0% {
+    border-color: #ff4d4d;
+    box-shadow: 0 0 5px 2px rgba(255, 0, 0, 0.4);
+    transform: scale(1);
+  }
+  50% {
+    border-color: #e60000;
+    box-shadow: 0 0 15px 5px rgba(255, 0, 0, 0.8);
+  }
+  100% {
+    border-color: initial;
+    box-shadow: none
+  }
+}
+
+.card.erro {
+  animation: errado 0.4s ease forwards;
+}
+
 .frente-carta,
 .atras-carta{
   position: absolute;
@@ -76,7 +114,13 @@
   align-items: center;
   justify-content: center;
   font-size: 32px;
-  
+  background: 
+  linear-gradient(135deg, rgb(57, 57, 57) 25%, transparent 25%) -50px 0,
+  linear-gradient(225deg, rgb(57, 57, 57) 25%, transparent 25%) -50px 0,
+  linear-gradient(315deg, rgb(57, 57, 57) 25%, transparent 25%),
+  linear-gradient(45deg, rgb(57, 57, 57) 25%, transparent 25%);	
+  background-size: 1em 1em;
+  background-color: #333333;
 }
 
 .frente-carta {

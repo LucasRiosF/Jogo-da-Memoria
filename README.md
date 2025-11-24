@@ -15,7 +15,7 @@ CSS Grid
 
 Git & GitHub
 
-Funcionalidades
+# Funcionalidades
 
 Exibição das cartas em um grid responsivo
 

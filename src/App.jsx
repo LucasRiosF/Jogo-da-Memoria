@@ -8,9 +8,9 @@ import { cards } from './cardsData'
 function App() {
   const [cartas, setCartas] = useState([]);
   const [primeiraCarta, setPrimeiraCarta] = useState(null);
-  const [segundaCarta, setSegundaCarta] = useState(null);
+ // const [segundaCarta, setSegundaCarta] = useState(null);
   const [bloqueado, setBloqueado] = useState(false);
-  const [virada, setVirada] = useState(false);
+ // const [virada, setVirada] = useState(false);
 
 function gerarDeck(cartas) {
   const deck = []
@@ -23,6 +23,8 @@ function gerarDeck(cartas) {
       id: Math.random().toString(36).substring(2, 9),
       parID: parID,
       image: card.image,
+      acerto: false,
+      erro: false,
       virada: false
     }
 
@@ -30,6 +32,8 @@ function gerarDeck(cartas) {
       id: Math.random().toString(36).substring(2, 9),
       parID: parID,
       image: card.image,
+      acerto: false,
+      erro: false,
       virada: false
     }
 
@@ -65,40 +69,36 @@ function virarCarta(carta) {
 
    setCartas(prev =>
     prev.map(c =>
-     c.id === carta.id ? { ...c, virada: true } : c
+     c.id === carta.id ? { ...c, virada: true, erro: false } : c
     )
   )
 
 if (!primeiraCarta) {
-  setPrimeiraCarta(carta);
+  setPrimeiraCarta({...carta, virada: true}); //b
   return;
 }
 
-  //setSegundaCarta(carta);
   setBloqueado(true);
 
    if (primeiraCarta.parID === carta.parID) {
-    const novasCartas = cartas.map( c => {
-      if (c.id === primeiraCarta.id || c.id === carta.id){
-         return {... c, virada: true}
-      }
-      return c;
-    });
-    setCartas(novasCartas);
+    setCartas(prev => prev.map( c => 
+      (c.id === primeiraCarta.id || c.id === carta.id)
+         ? {... c, acerto: true} //b
+        : c
+     )
+    );
     setPrimeiraCarta(null);
     setBloqueado(false);
   } else {
     setTimeout(() => {
-
-     const desvira = cartas.map( c => {
-      if (c.id === primeiraCarta.id || c.id === carta.id){
-         return {... c, virada: false}
-      }
-      return c;
-    });
-    setCartas(desvira);
+     setCartas (prev => prev.map( c => 
+      (c.id === primeiraCarta.id || c.id === carta.id)
+         ? {... c, virada: false, erro: true}
+        :c
+      )
+     );
     setPrimeiraCarta(null);
-    setSegundaCarta(null);
+    //setSegundaCarta(null);
     setBloqueado(false);
 
     }, 2000);
@@ -113,6 +113,8 @@ if (!primeiraCarta) {
           key={carta.id}
           image={carta.image}
           virada={carta.virada}
+          acerto={carta.acerto}
+          erro={carta.erro}
           onClick={() => virarCarta(carta)}
         />
       ))}
