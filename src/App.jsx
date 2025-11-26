@@ -8,9 +8,7 @@ import { cards } from './cardsData'
 function App() {
   const [cartas, setCartas] = useState([]);
   const [primeiraCarta, setPrimeiraCarta] = useState(null);
- // const [segundaCarta, setSegundaCarta] = useState(null);
   const [bloqueado, setBloqueado] = useState(false);
- // const [virada, setVirada] = useState(false);
 
 function gerarDeck(cartas) {
   const deck = []
@@ -74,7 +72,7 @@ function virarCarta(carta) {
   )
 
 if (!primeiraCarta) {
-  setPrimeiraCarta({...carta, virada: true}); //b
+  setPrimeiraCarta({...carta, virada: true});
   return;
 }
 
@@ -83,7 +81,7 @@ if (!primeiraCarta) {
    if (primeiraCarta.parID === carta.parID) {
     setCartas(prev => prev.map( c => 
       (c.id === primeiraCarta.id || c.id === carta.id)
-         ? {... c, acerto: true} //b
+         ? {... c, acerto: true}
         : c
      )
     );
@@ -98,7 +96,6 @@ if (!primeiraCarta) {
       )
      );
     setPrimeiraCarta(null);
-    //setSegundaCarta(null);
     setBloqueado(false);
 
     }, 2000);

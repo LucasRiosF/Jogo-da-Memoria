@@ -1,43 +1,53 @@
-Um jogo da memória desenvolvido em React + Vite, usando TailwindCSS para estilização e imagens personalizadas de cartas.
+# Jogo da Memória
+Um jogo da memória desenvolvido em React, usando TailwindCSS para estilização e imagens personalizadas de cartas.
 O objetivo é encontrar pares iguais dentro do menor número de jogadas.
 
-# Tecnologias usadas
+## Tecnologias usadas
+- React
+- Vite
+- JavaScript
+- TailwindCSS
+- CSS
+- Git & GitHub
 
-React
 
-Vite
+## Como Jogar
+- As cartas são embaralhadas aleatoriamente ao começar o jogo.  
+- Clique em uma carta para revelá-la.  
+- Clique em outra carta para tentar encontrar o par correspondente.
+- Fim de jogo quando todos os pares forem encontrados.  
+💡 Dica: para uma melhor experiência visual, especialmente em telas menores, pressione F11 para ativar o modo de tela cheia do navegador — assim as cartas ocupam mais espaço e o jogo fica mais imersivo.
 
-JavaScript (ES6+)
+## Funcionalidades Principais
+- Geração automática do baralho com pares e embaralhamento aleatório.
+- Mecânica completa do jogo: virar cartas, comparar pares, acerto/erro e bloqueio temporário de cliques.
+- Feedback visual para cartas corretas e incorretas.
+- Funções organizadas para virar carta, embaralhar e montar o deck.
 
-TailwindCSS
+## Como rodar o projeto
+#### `Clonagem do repositório`
+Faça a clonagem do repositório do GitHub no seu ambiente de trabalho e navegue até a pasta do projeto;
 
-CSS Grid
+```
+    git clone https://github.com/LucasRiosF/Jogo-da-Memoria
+    cd Jogo-da-Memoria
+```
 
-Git & GitHub
+#### `Instalação das dependências`
+Instale as dependências do projeto no terminal;
 
-# Funcionalidades
+```
+    npm install
+```
 
-Exibição das cartas em um grid responsivo
+#### `Inicie o projeto`
+Rode o projeto no seu ambiente de trabalho.
 
-Lógica de virar carta ao clicar
+```
+    npm run dev
+```
 
-Data-set de cartas gerado dinamicamente
-
-Embaralhamento aleatório
-
-Animações suaves com Tailwind
-
-(Próximos passos: verificar pares, bloquear cliques, contadores, vitória, reinício)
-
-# Como rodar o projeto
-
-git clone https://github.com/LucasRiosF/Jogo-da-Memoria
-
-cd Jogo-da-Memoria
-
-npm install
-
-npm run dev
+Abra o navegador no endereço indicado pela saída (normalmente `http://localhost:5173`)
 
 
 ## 🎨 Ilustrações
