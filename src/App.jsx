@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { FiRefreshCw } from "react-icons/fi";
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -43,10 +44,17 @@ function gerarDeck(cartas) {
 }
 
   useEffect(() => {
-    const d = gerarDeck(cards);
-    const embaralhado = embaralhar(d);
-    setCartas(embaralhado);
+    iniciarJogo()
   }, []);
+
+  function iniciarJogo() {
+  const d = gerarDeck(cards);
+  const embaralhado = embaralhar(d);
+
+  setCartas(embaralhado);
+  setPrimeiraCarta(null);
+  setBloqueado(false);
+}
 
 function embaralhar(deck) {
   const embaralhado = [...deck]
@@ -101,6 +109,9 @@ if (!primeiraCarta) {
     }, 2000);
   }
 }
+function reiniciarJogo() {
+  iniciarJogo();
+}
 
   return (
     <>
@@ -116,6 +127,11 @@ if (!primeiraCarta) {
         />
       ))}
     </div>
+
+    <button className="reiniciar" onClick={reiniciarJogo}>
+      <FiRefreshCw className="reloadIcon" size={30} />
+      Reiniciar
+    </button>
     </>
   )
 }
