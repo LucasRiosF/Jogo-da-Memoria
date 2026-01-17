@@ -5,6 +5,15 @@
   text-align: center;
 }
 
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center; /* centro horizontal */
+  align-items: center;     /* centro vertical */
+  background-color: #f1eded;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -45,6 +54,7 @@
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 12px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  caret-color: transparent;
 }
 
 .interior-carta {
@@ -136,12 +146,10 @@
 
 .jogo {
   display: grid;
-  grid-template-columns: repeat(5, 140px);
+  grid-template-columns: repeat(8, 140px);
   gap: 20px;
   justify-content: center;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .reiniciar {

@@ -8,6 +8,8 @@ import card7 from "../src/assets/cards/garfield.webp";
 import card8 from "../src/assets/cards/pernalonga.jpg";
 import card9 from "../src/assets/cards/pokemon.jpg";
 import card10 from "../src/assets/cards/wolverine.jpg";
+import card11 from "../src/assets/cards/godofwar.jpg";
+import card12 from "../src/assets/cards/batman.jpg";
 
 export const cards = [
     { id: 1, image: card1},
@@ -20,4 +22,6 @@ export const cards = [
     { id: 8, image: card8 },
     { id: 9, image: card9 },
     { id: 10, image: card10 },
+    { id: 11, image: card11 },
+    { id: 12, image: card12 }
 ]

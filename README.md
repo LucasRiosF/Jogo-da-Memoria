@@ -16,7 +16,6 @@ O objetivo é encontrar pares iguais dentro do menor número de jogadas.
 - Clique em uma carta para revelá-la.  
 - Clique em outra carta para tentar encontrar o par correspondente.
 - Fim de jogo quando todos os pares forem encontrados.  
-💡 Dica: para uma melhor experiência visual, especialmente em telas menores, pressione F11 para ativar o modo de tela cheia do navegador — assim as cartas ocupam mais espaço e o jogo fica mais imersivo.
 
 ## Funcionalidades Principais
 - Geração automática do baralho com pares e embaralhamento aleatório.
