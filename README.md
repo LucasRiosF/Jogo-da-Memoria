@@ -2,6 +2,16 @@
 Um jogo da memória desenvolvido em React, usando TailwindCSS para estilização e imagens personalizadas de cartas.
 O objetivo é encontrar pares iguais dentro do menor número de jogadas.
 
+---
+
+## Demonstração
+
+Acesse a aplicação online:
+
+[LINK DO PROJETO](https://jogo-da-memoria-eight-mauve.vercel.app/)
+
+---
+
 ## Tecnologias usadas
 - React
 - Vite
@@ -10,18 +20,23 @@ O objetivo é encontrar pares iguais dentro do menor número de jogadas.
 - CSS
 - Git & GitHub
 
+---
 
 ## Como Jogar
 - As cartas são embaralhadas aleatoriamente ao começar o jogo.  
 - Clique em uma carta para revelá-la.  
 - Clique em outra carta para tentar encontrar o par correspondente.
-- Fim de jogo quando todos os pares forem encontrados.  
+- Fim de jogo quando todos os pares forem encontrados.
+
+---
 
 ## Funcionalidades Principais
 - Geração automática do baralho com pares e embaralhamento aleatório.
 - Mecânica completa do jogo: virar cartas, comparar pares, acerto/erro e bloqueio temporário de cliques.
 - Feedback visual para cartas corretas e incorretas.
 - Funções organizadas para virar carta, embaralhar e montar o deck.
+
+---
 
 ## Como rodar o projeto
 #### `Clonagem do repositório`
@@ -48,6 +63,7 @@ Rode o projeto no seu ambiente de trabalho.
 
 Abra o navegador no endereço indicado pela saída (normalmente `http://localhost:5173`)
 
+---
 
 ## 🎨 Ilustrações
 Todas as imagens das cartas foram desenhadas por mim (Lucas Rios Ferreira) especialmente para este projeto.  
